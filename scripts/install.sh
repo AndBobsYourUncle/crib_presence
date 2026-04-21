@@ -24,7 +24,9 @@ if ! id "$SERVICE_USER" &>/dev/null; then
 fi
 
 echo ">>> Creating directories"
-install -d -o "$SERVICE_USER" -g "$SERVICE_USER" "$INSTALL_DIR" "$DATA_DIR" "$DATA_DIR/frames"
+install -d -o "$SERVICE_USER" -g "$SERVICE_USER" \
+    "$INSTALL_DIR" "$DATA_DIR" "$DATA_DIR/frames" \
+    "$DATA_DIR/.config" "$DATA_DIR/.config/Ultralytics"
 install -d -o root -g "$SERVICE_USER" -m 750 "$CONFIG_DIR"
 
 echo ">>> Copying code"
