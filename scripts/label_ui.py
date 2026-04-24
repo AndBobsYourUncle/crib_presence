@@ -403,12 +403,20 @@ def main() -> int:
     p.add_argument("frames_dir", type=Path, help="directory of .jpg frames")
     p.add_argument(
         "--markers", type=Path,
-        help="resume from a previously saved markers.json",
+        help="markers.json to resume from "
+             "(default: ./ranges.markers.json if present)",
     )
     args = p.parse_args()
 
+    markers_path = args.markers
+    if markers_path is None:
+        default = Path("ranges.markers.json")
+        if default.exists():
+            markers_path = default
+            print(f"loading markers from {default}")
+
     root = tk.Tk()
-    LabelerApp(root, args.frames_dir, args.markers)
+    LabelerApp(root, args.frames_dir, markers_path)
     root.mainloop()
     return 0
 
