@@ -110,6 +110,8 @@ pip install pillow
 python3 scripts/label_ui.py /Volumes/baby_frames
 ```
 
+<img width="1006" height="854" alt="Screenshot 2026-04-24 at 1 34 58 PM" src="https://github.com/user-attachments/assets/72e473ca-9f09-41a8-b59a-5d9762071b9b" />
+
 Scrub with arrow keys, press `i` / `o` to drop IN/OUT markers at transition
 frames, `s` to save a `ranges.csv`. Keys:
 
